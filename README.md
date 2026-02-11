@@ -18,3 +18,20 @@
 | 12 | Zárthelyi dolgozat II. |
 | 13 | Konzultáció |
 | 14 | Pótló zárthelyi dolgozat |
+
+## Parancsok
+
+    // új projekt létrehozása a mappa neve alapján
+    mkdir foldername
+    cd foldername
+    dotnet new console --use-program-main
+
+    // sln létrehozása dotnet10-es slnx formátumban
+    dotnet new sln -n oktatas-aszppa --format slnx
+
+    // gitignore létrehozása
+    dotnet new gitignore
+
+    // meglévő projekt (csproj) hozzáadása sln-hez
+    dotnet sln oktatas-aszppa.slnx add 01-generics/01-generics.csproj
+    dotnet sln oktatas-aszppa.slnx add 02-linked-list/02-linked-list.csproj
