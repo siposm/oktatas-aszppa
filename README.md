@@ -1,4 +1,4 @@
-# Adatszerkezetek és párhuzamos programozás alapjai
+# Adatszerkezetek és Párhuzamos Programozás Alapjai
 
 ## Heti menetrend
 
