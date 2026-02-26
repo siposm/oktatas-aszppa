@@ -7,5 +7,11 @@
             "request": "launch",
             "projectPath": "${workspaceFolder}/01-generics/01-generics.csproj",
         },
+        {
+            "name": "C#: 02 Debug",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/02-stack-queue/02-stack-queue.csproj",
+        },
     ]
 }
