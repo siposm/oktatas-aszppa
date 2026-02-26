@@ -5,7 +5,7 @@ class GenStack<T>
     T[] items;
     int itemCounter;
 
-    public GenStack(int size)
+    public GenStack(int size = 4)
     {
         items = new T[size];
         itemCounter = 0;
@@ -15,6 +15,7 @@ class GenStack<T>
     {
         if (itemCounter == items.Length)
             throw new StackOverflowException("Stack is full...");
+
         items[itemCounter++] = item;
     }
 
