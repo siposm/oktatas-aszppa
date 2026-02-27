@@ -23,17 +23,19 @@ TTK: <https://nik.uni-obuda.hu/targyleirasok/tantargyak/adatszerkezetek-es-parhu
 
 ## Parancsok
 
-    // új projekt létrehozása a mappa neve alapján
-    mkdir foldername
-    cd foldername
-    dotnet new console --use-program-main
+```bash
+# új projekt létrehozása a mappa neve alapján
+mkdir foldername
+cd foldername
+dotnet new console --use-program-main
 
-    // sln létrehozása dotnet10-es slnx formátumban
-    dotnet new sln -n oktatas-aszppa --format slnx
+# sln létrehozása dotnet10-es slnx formátumban
+dotnet new sln -n oktatas-aszppa --format slnx
 
-    // gitignore létrehozása
-    dotnet new gitignore
+# gitignore létrehozása
+dotnet new gitignore
 
-    // meglévő projekt (csproj) hozzáadása sln-hez
-    dotnet sln oktatas-aszppa.slnx add 01-generics/01-generics.csproj
-    dotnet sln oktatas-aszppa.slnx add 02-linked-list/02-linked-list.csproj
+# meglévő projekt (csproj) hozzáadása sln-hez (root-ból)
+dotnet sln oktatas-aszppa.slnx add 01-generics/01-generics.csproj
+dotnet sln <gyökérben-lévő-solution.slnx> add <projekt-mappa>/<projekt-neve.csproj>
+```
