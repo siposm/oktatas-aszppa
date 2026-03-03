@@ -2,7 +2,7 @@
 
 **Feladat:** Valósítson meg egy `ValidatedValue<T>` nevű **generikus osztályt**, amely egy `T` típusú értéket tárol, és biztosítja, hogy az érték csak akkor legyen beállítható, ha megfelel egy megadott validációs feltételnek.
 
-### 1) Osztály célja
+## 1) Osztály célja
 
 Az osztály egyetlen értéket kezel:
 
