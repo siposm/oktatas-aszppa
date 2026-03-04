@@ -1,4 +1,5 @@
 <Solution>
   <Project Path="01-generics/01-generics.csproj" />
   <Project Path="02-stack-queue/02-stack-queue.csproj" />
+  <Project Path="03-linked-list/03-linked-list.csproj" />
 </Solution>

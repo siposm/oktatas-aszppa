@@ -2,16 +2,22 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "C#: 01 Debug",
+            "name": "C#: 01 generics",
             "type": "dotnet",
             "request": "launch",
             "projectPath": "${workspaceFolder}/01-generics/01-generics.csproj",
         },
         {
-            "name": "C#: 02 Debug",
+            "name": "C#: 02 stack queue",
             "type": "dotnet",
             "request": "launch",
             "projectPath": "${workspaceFolder}/02-stack-queue/02-stack-queue.csproj",
+        },
+        {
+            "name": "C#: 03 linked list",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/03-linked-list/03-linked-list.csproj",
         },
     ]
 }
