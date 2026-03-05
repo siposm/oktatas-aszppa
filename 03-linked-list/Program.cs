@@ -133,6 +133,17 @@ class ChainedList<T> //: IEnumerator, IEnumerable
     }
 
     #region iterator methods
+    public IEnumerator<T> GetEnumerator()
+    {
+        var p = this.head;
+        while (p != null)
+        {
+            yield return p.content;
+            p = p.next;
+        }
+    }
+
+
     // public object Current
     // {
     //     get
