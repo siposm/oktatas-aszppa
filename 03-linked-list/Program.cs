@@ -1,10 +1,12 @@
-﻿using System.Net.WebSockets;
+﻿using System.Collections;
+using System.Net.WebSockets;
 
 namespace _03_linked_list;
 
-class ChainedList<T>
+class ChainedList<T> //: IEnumerator, IEnumerable
 {
     private ListItem? head;
+    private ListItem? iteratorPointer;
     public int Count { get; private set; }
 
     class ListItem
@@ -129,6 +131,45 @@ class ChainedList<T>
             p = p.next;
         }
     }
+
+    #region iterator methods
+    // public object Current
+    // {
+    //     get
+    //     {
+    //         if (iteratorPointer == null) throw new InvalidOperationException();
+    //         return this.iteratorPointer.content;
+    //     }
+    // }
+    // public IEnumerator GetEnumerator()
+    // {
+    //     return this;
+    // }
+
+    // public bool MoveNext()
+    // {
+    //     if (iteratorPointer == null) // first call
+    //     {
+    //         iteratorPointer = this.head;
+    //         return true;
+    //     }
+    //     else if(iteratorPointer.next != null) // n'th call
+    //     {
+    //         iteratorPointer = iteratorPointer.next;
+    //         return true;
+    //     }
+    //     else // last call
+    //     {
+    //         this.Reset();
+    //         return false;
+    //     }
+    // }
+
+    // public void Reset()
+    // {
+    //     this.iteratorPointer = default;
+    // }
+    #endregion
     // rossz taktika --> jobb helyette külön counter-t használni
     // public int Count()
     // {
@@ -192,7 +233,7 @@ class Program
 
         foreach (var item in clist)
         {
-
+            Console.WriteLine(item);
         }
     }
 
