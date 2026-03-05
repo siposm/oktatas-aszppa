@@ -82,6 +82,7 @@ class ChainedList<T> //: IEnumerator, IEnumerable
             }
             p.next = newItem;
         }
+        Count++;
     }
 
     public void InsertToPlace(T newContent, int index)
@@ -106,6 +107,7 @@ class ChainedList<T> //: IEnumerator, IEnumerable
             newItem.next = p.next;
             p.next = newItem;
         }
+        Count++;
     }
 
     public void Clear()
@@ -242,10 +244,11 @@ class Program
 
         Console.WriteLine("--------------------------");
 
-        foreach (var item in clist)
-        {
-            Console.WriteLine(item);
-        }
+        Console.WriteLine("foreach:");
+        foreach (var item in clist) Console.WriteLine(item);
+
+        Console.WriteLine("for:");
+        for (int i = 0; i < clist.Count; i++) Console.WriteLine(clist[i]);
     }
 
     static void Process(string? param)
