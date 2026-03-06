@@ -1,12 +1,11 @@
 ﻿using System.Collections;
-using System.Net.WebSockets;
 
 namespace _03_linked_list;
 
 class ChainedList<T> : IEnumerable //: IEnumerator, IEnumerable
 {
     private ListItem? head;
-    private ListItem? iteratorPointer; // ienumerator interfész movenext bejárásához!
+    // private ListItem? iteratorPointer; // ienumerator interfész movenext bejárásához!
     public int Count { get; private set; }
 
     class ListItem
