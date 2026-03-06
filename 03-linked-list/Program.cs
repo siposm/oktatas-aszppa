@@ -3,10 +3,10 @@ using System.Net.WebSockets;
 
 namespace _03_linked_list;
 
-class ChainedList<T> //: IEnumerator, IEnumerable
+class ChainedList<T> : IEnumerable //: IEnumerator, IEnumerable
 {
     private ListItem? head;
-    private ListItem? iteratorPointer;
+    private ListItem? iteratorPointer; // ienumerator interfész movenext bejárásához!
     public int Count { get; private set; }
 
     class ListItem
@@ -23,10 +23,24 @@ class ChainedList<T> //: IEnumerator, IEnumerable
 
     public static ChainedList<T> operator +(ChainedList<T> list, T newValue)
     {
-        if (list == null) throw new ArgumentNullException(nameof(list));
+        if (list == null)
+            throw new ArgumentNullException(nameof(list));
         list.InsertToBack(newValue);
         return list;
     }
+
+    // rossz taktika --> jobb helyette külön counter-t használni
+    // public int Count()
+    // {
+    //     int count = 0;
+    //     var p = this.head;
+    //     while (p != null)
+    //     {
+    //         p = p.next;
+    //         count++;
+    //     }
+    //     return count;
+    // }
 
     private T SearchAndUpdate(int index, T? newValue = default)
     {
@@ -39,10 +53,12 @@ class ChainedList<T> //: IEnumerator, IEnumerable
         }
         if (p != null && count == index)
         {
-            if (newValue != null) p.content = newValue;
+            if (newValue != null)
+                p.content = newValue;
             return p.content;
         }
-        else throw new IndexOutOfRangeException("Error, index was outside...");
+        else
+            throw new IndexOutOfRangeException("Error, index was outside...");
     }
 
     public int SearchByContent(T content)
@@ -51,7 +67,8 @@ class ChainedList<T> //: IEnumerator, IEnumerable
         int counter = 0;
         while (p != null && !p.content.Equals(content))
         {
-            p = p.next; counter++;
+            p = p.next;
+            counter++;
         }
         return (p == null) ? -1 : counter;
     }
@@ -129,13 +146,16 @@ class ChainedList<T> //: IEnumerator, IEnumerable
         var p = this.head; // ListItem? p = this.head;
         while (p != null)
         {
-            actionToInvoke(p.content); // korábban cw...
+            actionToInvoke(p.content); // korábban cw... -> rejtett függőség
             p = p.next;
         }
     }
 
+
+
     #region iterator methods
-    public IEnumerator<T> GetEnumerator()
+
+    public IEnumerator GetEnumerator()
     {
         var p = this.head;
         while (p != null)
@@ -145,6 +165,16 @@ class ChainedList<T> //: IEnumerator, IEnumerable
         }
     }
 
+    // IEnumerable interfész nélkül --> nem ideális taktika
+    // public IEnumerator<T> GetEnumerator()
+    // {
+    //     var p = this.head;
+    //     while (p != null)
+    //     {
+    //         yield return p.content;
+    //         p = p.next;
+    //     }
+    // }
 
     // public object Current
     // {
@@ -183,18 +213,6 @@ class ChainedList<T> //: IEnumerator, IEnumerable
     //     this.iteratorPointer = default;
     // }
     #endregion
-    // rossz taktika --> jobb helyette külön counter-t használni
-    // public int Count()
-    // {
-    //     int count = 0;
-    //     var p = this.head;
-    //     while (p != null)
-    //     {
-    //         p = p.next;
-    //         count++;
-    //     }
-    //     return count;
-    // }
 }
 
 class Program
@@ -244,11 +262,13 @@ class Program
 
         Console.WriteLine("--------------------------");
 
-        Console.WriteLine("foreach:");
-        foreach (var item in clist) Console.WriteLine(item);
+        Console.WriteLine("\nBejárás foreach:");
+        foreach (var item in clist)
+            Console.WriteLine(item);
 
-        Console.WriteLine("for:");
-        for (int i = 0; i < clist.Count; i++) Console.WriteLine(clist[i]);
+        Console.WriteLine("\nBejárás for:");
+        for (int i = 0; i < clist.Count; i++)
+            Console.WriteLine(clist[i]);
     }
 
     static void Process(string? param)
