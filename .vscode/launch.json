@@ -19,5 +19,11 @@
             "request": "launch",
             "projectPath": "${workspaceFolder}/03-linked-list/03-linked-list.csproj",
         },
+        {
+            "name": "C#: 04 binary search tree",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/04-bstree/04-bstree.csproj",
+        },
     ]
 }
