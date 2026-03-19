@@ -120,15 +120,16 @@ class BST<K, T>
         }
     }
 
-    private void DeleteWithTwoChildren(TreeItem target, ref TreeItem? r)
+    private void DeleteWithTwoChildren(TreeItem e, ref TreeItem? r)
     {
+        // e = target csúcs amit törölni / felülírni akarunk
         if (r == null) return;
 
-        if (r.right != null) DeleteWithTwoChildren(target, ref r.right);
+        if (r.right != null) DeleteWithTwoChildren(e, ref r.right);
         else
         {
-            target.key = r.key;
-            target.content = r.content;
+            e.key = r.key;
+            e.content = r.content;
             r = r.left;
         }
     }
