@@ -53,7 +53,7 @@ class BST<K, T>
     #endregion
 
     #region  traversal
-    public void Traverse(TraversalTypes type, Action<K,T> action)
+    public void Traverse(TraversalTypes type, Action<K, T> action)
     {
         if (this.root == null)
             return;
@@ -66,7 +66,7 @@ class BST<K, T>
             PostOrder(this.root, action);
     }
 
-    private void PreOrder(TreeItem? p, Action<K,T> action)
+    private void PreOrder(TreeItem? p, Action<K, T> action)
     {
         if (p != null)
         {
@@ -76,7 +76,7 @@ class BST<K, T>
         }
     }
 
-    private void InOrder(TreeItem? p, Action<K,T> action)
+    private void InOrder(TreeItem? p, Action<K, T> action)
     {
         if (p != null)
         {
@@ -86,7 +86,7 @@ class BST<K, T>
         }
     }
 
-    private void PostOrder(TreeItem? p, Action<K,T> action)
+    private void PostOrder(TreeItem? p, Action<K, T> action)
     {
         if (p != null)
         {
@@ -139,17 +139,41 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello BSTree!\n----------------\n");
         var bst = new BST<int, string>();
-        bst.Insert(20, "alma");
-        bst.Insert(10, "szilva");
-        bst.Insert(30, "körte");
-        bst.Insert(22, "barack");
-        bst.Insert(31, "narancs");
-        bst.Insert(9, "eper");
+        bst.Insert(30, "alma");
+        bst.Insert(20, "körte");
+        bst.Insert(40, "szilva");
+        bst.Insert(35, "dinnye");
 
+        Console.WriteLine("Törlés előtt:");
+        bst.Traverse(
+            TraversalTypes.InOrder,
+            (key, value) => Console.WriteLine($"[{key}] - {value}")
+        );
+
+        Console.WriteLine("Törlés után:");
         bst.Delete(30);
+        bst.Traverse(
+            TraversalTypes.InOrder,
+            (key, value) => Console.WriteLine($"[{key}] - {value}")
+        );
 
-        bst.Traverse(TraversalTypes.InOrder, (key,value) => Console.WriteLine($" > [{key}] - {value}"));
+        Console.WriteLine("PREORDER:");
+        bst.Traverse(
+            TraversalTypes.PreOrder,
+            (key, value) => Console.WriteLine($"[{key}] - {value}")
+        );
+
+        Console.WriteLine("INORDER:");
+        bst.Traverse(
+            TraversalTypes.InOrder,
+            (key, value) => Console.WriteLine($"[{key}] - {value}")
+        );
+
+        Console.WriteLine("POSTORDER:");
+        bst.Traverse(
+            TraversalTypes.PostOrder,
+            (key, value) => Console.WriteLine($"[{key}] - {value}")
+        );
     }
 }
