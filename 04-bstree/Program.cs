@@ -53,7 +53,7 @@ class BST<K, T>
     #endregion
 
     #region  traversal
-    public void Traverse(TraversalTypes type, Action<string> action)
+    public void Traverse(TraversalTypes type, Action<K,T> action)
     {
         if (this.root == null)
             return;
@@ -66,33 +66,33 @@ class BST<K, T>
             PostOrder(this.root, action);
     }
 
-    private void PreOrder(TreeItem? p, Action<string> action)
+    private void PreOrder(TreeItem? p, Action<K,T> action)
     {
         if (p != null)
         {
-            action(p.ToString());
+            action(p.key, p.content);
             PreOrder(p.left, action!);
             PreOrder(p.right, action!);
         }
     }
 
-    private void InOrder(TreeItem? p, Action<string> action)
+    private void InOrder(TreeItem? p, Action<K,T> action)
     {
         if (p != null)
         {
             InOrder(p.left, action!);
-            action(p.ToString());
+            action(p.key, p.content);
             InOrder(p.right, action!);
         }
     }
 
-    private void PostOrder(TreeItem? p, Action<string> action)
+    private void PostOrder(TreeItem? p, Action<K,T> action)
     {
         if (p != null)
         {
             PostOrder(p.left, action!);
             PostOrder(p.right, action!);
-            action(p.ToString());
+            action(p.key, p.content);
         }
     }
     #endregion
@@ -150,6 +150,6 @@ class Program
 
         bst.Delete(30);
 
-        bst.Traverse(TraversalTypes.InOrder, s => Console.WriteLine(" > " + s));
+        bst.Traverse(TraversalTypes.InOrder, (key,value) => Console.WriteLine($" > [{key}] - {value}"));
     }
 }
