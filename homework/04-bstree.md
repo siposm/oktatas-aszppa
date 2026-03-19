@@ -49,3 +49,33 @@ A csapatokat listával képezze le, ahol a játékosok pontszáma alapján tört
 Az összeállított csapatokat bináris keresőfában tárolja el. Minden csapatnak készítsen egy algoritmus alapján valamilyen egyedi azonosítót, ami alapján a fába való beszúrás megtörténik.
 
 Járja be a fát és írja ki a csapatokat a konzolra.
+
+### 5) Fa struktúra megjelenítése vizuálisan
+
+Készítsen egy olyan vizuális megjelenítést a bináris keresőfához, amely szintenként írja ki az elemeket a konzolra, egy minta alább látható.
+
+Fa felépítése:
+
+```txt
+gyökér: 20 - alma
+balra: 10 - szilva
+jobbra: 22 - barack
+10 balra: 9 - eper
+22 jobbra: 31 - narancs
+```
+
+Szintenkénti konzolos megjelenítés, hiányzó gyerek elemekkel:
+
+```txt
+0. szint: 20 - alma
+1. szint: 10 - szilva | 22 - barack
+2. szint: 9 - eper | - | - | 31 - narancs
+```
+
+Fa-szerű megjelenítés, hiányzó gyerekelemek nélkül:
+
+```txt
+                20 - alma
+        10 - szilva      22 - barack
+    9 - eper                 31 - narancs
+```
