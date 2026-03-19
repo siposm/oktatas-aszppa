@@ -29,7 +29,7 @@ class BST<K, T>
 
         public override string ToString()
         {
-            return $"{key.ToString()} - {content?.ToString()}";
+            return $"{key?.ToString()} - {content?.ToString()}";
         }
     }
 
@@ -53,7 +53,7 @@ class BST<K, T>
     #endregion
 
     #region  traversal
-    public void Traverse(TraversalTypes type, Action<T> action)
+    public void Traverse(TraversalTypes type, Action<string> action)
     {
         if (this.root == null)
             return;
@@ -66,33 +66,33 @@ class BST<K, T>
             PostOrder(this.root, action);
     }
 
-    private void PreOrder(TreeItem? p, Action<T> action)
+    private void PreOrder(TreeItem? p, Action<string> action)
     {
         if (p != null)
         {
-            action(p.content);
+            action(p.ToString());
             PreOrder(p.left, action!);
             PreOrder(p.right, action!);
         }
     }
 
-    private void InOrder(TreeItem? p, Action<T> action)
+    private void InOrder(TreeItem? p, Action<string> action)
     {
         if (p != null)
         {
             InOrder(p.left, action!);
-            action(p.content);
+            action(p.ToString());
             InOrder(p.right, action!);
         }
     }
 
-    private void PostOrder(TreeItem? p, Action<T> action)
+    private void PostOrder(TreeItem? p, Action<string> action)
     {
         if (p != null)
         {
             PostOrder(p.left, action!);
             PostOrder(p.right, action!);
-            action(p.content);
+            action(p.ToString());
         }
     }
     #endregion
@@ -139,7 +139,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello BSTree!");
+        Console.WriteLine("Hello BSTree!\n----------------\n");
         var bst = new BST<int, string>();
         bst.Insert(20, "alma");
         bst.Insert(10, "szilva");
@@ -149,6 +149,7 @@ class Program
         bst.Insert(9, "eper");
 
         bst.Delete(30);
-        ;
+
+        bst.Traverse(TraversalTypes.InOrder, s => Console.WriteLine(" > " + s));
     }
 }
