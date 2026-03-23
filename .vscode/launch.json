@@ -25,5 +25,11 @@
             "request": "launch",
             "projectPath": "${workspaceFolder}/04-bstree/04-bstree.csproj",
         },
+        {
+            "name": "C#: 05 graph",
+            "type": "dotnet",
+            "request": "launch",
+            "projectPath": "${workspaceFolder}/05-graph/05-graph.csproj",
+        },
     ]
 }

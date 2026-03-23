@@ -3,4 +3,5 @@
   <Project Path="02-stack-queue/02-stack-queue.csproj" />
   <Project Path="03-linked-list/03-linked-list.csproj" />
   <Project Path="04-bstree/04-bstree.csproj" />
+  <Project Path="05-graph/05-graph.csproj" />
 </Solution>
