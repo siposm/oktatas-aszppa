@@ -40,3 +40,18 @@ Képezze le a facebook / instagram ismerőseit közösségi hálóra, gráf seg�
 
 - Legyen lehetőség lekérdezni egy adott személy ismerőseit.
 - Legyen lehetőség "ismerősnek jelölést" készíteni, amelyhez az kell, hogy két személy között legyen legalább 2 db közös ismerős.
+
+### 5) Látványosságok
+
+Készítsen egy térképet ahol városokat lehet rögzíteni, a városokhoz pedig nevezetességek társíthatók. A térképet gráffal reprezentálja, ahol a csomópontok a városok, a városban található nevezetességek pedig láncolt listával vannak megvalósítva. A megvalósításhoz használjon generikus gráf és generikus láncolt lista adatszerkezeteket.
+
+Tetszőleges algoritmussal járja be a gráfot, és írja ki a városokat a hozzájuk tartozó nevezetességekkel.
+
+Példa kimenet:
+
+- Párizs – Eiffel-torony, Louvre, Notre-Dame
+- Róma – Colosseum, Forum Romanum, Pantheon, Trevi-kút, Szent Péter-bazilika
+- London – Big Ben, Tower Bridge, Buckingham-palota, London Eye, Tower of London
+- Barcelona – Sagrada Família, Casa Batlló
+- Athén – Akropolisz, Parthenón, Akropolisz Múzeum, Zeusz temploma, Panathenaiko Stadion
+- Prága – Károly híd, Prágai vár
