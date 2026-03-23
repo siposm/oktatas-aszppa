@@ -3,34 +3,34 @@ namespace _05_graph;
 class Graph<T>
 {
     private readonly List<List<T>> adjacencyList = new();
-    private readonly List<T> content = new();
+    private readonly List<T> nodes = new();
 
     public void AddNode(T node)
     {
-        content.Add(node);
+        nodes.Add(node);
         adjacencyList.Add(new List<T>());
     }
 
     public void AddEdge(T from, T to)
     {
-        int indexFrom = content.IndexOf(from);
-        int indexTo = content.IndexOf(to);
+        int indexFrom = nodes.IndexOf(from);
+        int indexTo = nodes.IndexOf(to);
 
-        adjacencyList[indexFrom].Add(content[indexTo]);
-        adjacencyList[indexTo].Add(content[indexFrom]);
+        adjacencyList[indexFrom].Add(nodes[indexTo]);
+        adjacencyList[indexTo].Add(nodes[indexFrom]);
     }
 
     public bool HasEdge(T from, T to)
     {
-        int indexFrom = content.IndexOf(from);
-        int indexTo = content.IndexOf(to);
+        int indexFrom = nodes.IndexOf(from);
+        int indexTo = nodes.IndexOf(to);
 
-        return adjacencyList[indexFrom].Contains(content[indexTo]);
+        return adjacencyList[indexFrom].Contains(nodes[indexTo]);
     }
 
     public List<T> Neighbors(T whichNode)
     {
-        int index = content.IndexOf(whichNode);
+        int index = nodes.IndexOf(whichNode);
         return adjacencyList[index];
     }
 
