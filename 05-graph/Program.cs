@@ -6,51 +6,53 @@ class Program
     {
         var g = new Graph<User>();
 
-        var Joseph = new User() { Name = "Joseph" };
-        var Stew   = new User() { Name = "Stew"   };
-        var Marge  = new User() { Name = "Marge"  };
-        var Gerald = new User() { Name = "Gerald" };
-        var Zack   = new User() { Name = "Zack"   };
-        var Peter  = new User() { Name = "Peter"  };
-        var Janet  = new User() { Name = "Janet"  };
+        var joseph = new User() { Name = "Joseph" };
+        var stew   = new User() { Name = "Stew"   };
+        var marge  = new User() { Name = "Marge"  };
+        var gerald = new User() { Name = "Gerald" };
+        var zack   = new User() { Name = "Zack"   };
+        var peter  = new User() { Name = "Peter"  };
+        var janet  = new User() { Name = "Janet"  };
 
-        g.AddNode(Joseph);
-        g.AddNode(Stew);
-        g.AddNode(Marge);
-        g.AddNode(Gerald);
-        g.AddNode(Zack);
-        g.AddNode(Peter);
-        g.AddNode(Janet);
+        g.AddNode(joseph);
+        g.AddNode(stew);
+        g.AddNode(marge);
+        g.AddNode(gerald);
+        g.AddNode(zack);
+        g.AddNode(peter);
+        g.AddNode(janet);
 
         //      Marge
         //     /     \
-        //  Stew-----Joseph
-        //             |  \
+        //  Stew ---- Joseph
         //             |   \
+        //             |    \
         //             |    Gerald
+        //             |    /
         //             |   /
-        //             |  /
-        //            Zack
-        //           /
-        //        Peter
-        //          |
-        //        Janet
+        //             Zack
+        //            /
+        //         Peter
+        //           |
+        //         Janet
 
-        g.AddEdge(Joseph, Stew);
-        g.AddEdge(Joseph, Marge);
-        g.AddEdge(Joseph, Zack);
-        g.AddEdge(Joseph, Gerald);
+        g.AddEdge(joseph, stew);
+        g.AddEdge(joseph, marge);
+        g.AddEdge(joseph, zack);
+        g.AddEdge(joseph, gerald);
 
-        g.AddEdge(Marge, Stew);
-        g.AddEdge(Gerald, Zack);
+        g.AddEdge(marge, stew);
+        g.AddEdge(gerald, zack);
 
-        g.AddEdge(Peter, Zack);
-        g.AddEdge(Peter, Janet);
+        g.AddEdge(peter, zack);
+        g.AddEdge(peter, janet);
 
-        Console.WriteLine("\n>> DFS\n");
-        g.DFS(Janet, Console.WriteLine);
+        Console.WriteLine("\n>> DFS");
+        Console.WriteLine("▀▀▀▀▀▀▀▀\n");
+        g.DFS(janet, Console.WriteLine);
 
-        Console.WriteLine("\n>> BFS\n");
-        g.BFS(Janet, Console.WriteLine);
+        Console.WriteLine("\n>> BFS");
+        Console.WriteLine("▀▀▀▀▀▀▀▀\n");
+        g.BFS(janet, Console.WriteLine);
     }
 }
