@@ -11,6 +11,7 @@ Készítsen egy `TreeStatistics` osztályt, amely metódusai megkapják a generi
 - levelek száma: hány levele van
 - min: mi a legkisebb elem értéke
 - max: mi a legnagyobb elem értéke
+
 <br>
 
 ---
@@ -20,6 +21,12 @@ Készítsen egy `TreeStatistics` osztályt, amely metódusai megkapják a generi
 ### 2) Tömb rendezés
 
 Generáljon egy tetszőleges tömböt, amelyből építsen fel bináris keresőfát, majd a fát a megfelelő bejárással feldolgozva adja vissza rendezetten az elemeket az eredeti tömbbe.
+
+<br>
+
+---
+
+<br>
 
 ### 3) Szótár alkalmazás
 
@@ -39,6 +46,12 @@ Feladatok:
 ]
 ```
 
+<br>
+
+---
+
+<br>
+
 ### 4) ESport rangsor
 
 Készítsen **rendezett láncolt lista** és **bináris keresőfa** segítségével egy csapatok eltárolására alkalmas rendszert. Mind a két adatszerkezetet **generikusan** valósítsa meg.
@@ -54,6 +67,12 @@ A csapatokat listával képezze le, ahol a játékosok pontszáma alapján tört
 Az összeállított csapatokat bináris keresőfában tárolja el. Minden csapatnak készítsen egy algoritmus alapján valamilyen egyedi azonosítót, ami alapján a fába való beszúrás megtörténik.
 
 Járja be a fát és írja ki a csapatokat a konzolra.
+
+<br>
+
+---
+
+<br>
 
 ### 5) Fa struktúra megjelenítése vizuálisan
 
