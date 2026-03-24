@@ -10,6 +10,12 @@ Az osztály egyetlen értéket kezel:
 * rendelkezik egy validátor függvénnyel (`Func<T, bool> validator`)
 * csak olyan új értéket fogad el, amelyre a validátor `true`-t ad
 
+<br>
+
+---
+
+<br>
+
 ## 2) Követelmények (specifikáció)
 
 ### 2.1 Osztály deklaráció
@@ -65,6 +71,12 @@ A `TrySet(T newValue)` metódus:
   * **ne változtassa meg** a `Value`-t
   * térjen vissza `false`-szal
 
+<br>
+
+---
+
+<br>
+
 ## 3) Kötelező tesztesetek (konzol program)
 
 Készítsen `Program.cs`-ben demonstrációt, amely **mindhárom** típusra létrehoz egy példányt, és minden példánynál legalább:
@@ -93,6 +105,12 @@ Készítsen `Program.cs`-ben demonstrációt, amely **mindhárom** típusra lét
 * Validátor: `x <= DateTime.Now`
 * Példa érvényes: `DateTime.Now`, `DateTime.Now.AddDays(-1)`
 * Példa érvénytelen: `DateTime.Now.AddMinutes(5)`, `DateTime.Now.AddDays(1)`
+
+<br>
+
+---
+
+<br>
 
 ## 4) Kimenet forma (javaslat)
 
