@@ -11,6 +11,11 @@ Készítsen egy `TreeStatistics` osztályt, amely metódusai megkapják a generi
 - levelek száma: hány levele van
 - min: mi a legkisebb elem értéke
 - max: mi a legnagyobb elem értéke
+<br>
+
+---
+
+<br>
 
 ### 2) Tömb rendezés
 

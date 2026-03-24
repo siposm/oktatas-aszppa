@@ -24,13 +24,31 @@ Példa kimenet:
 - D - 3 db szomszéd: B, C, E
 - E - 1 db szomszéd: D
 
+<br>
+
+---
+
+<br>
+
 ### 2) Összefüggőség vizsgálat
 
 Döntse el DFS vagy BFS segítségével, hogy egy gráf összefüggő-e. Induljon el egy tetszőleges csúcsból, ha minden csúcs érintésre kerül akkor a gráf összefüggő, egyéb esetben nem.
 
+<br>
+
+---
+
+<br>
+
 ### 3) Kör keresése
 
 Döntse el egy gráfról, hogy tartalmaz-e kört. DFS bejárás közben figyelje, hogy egy már bejárt szomszéd nem a szülőcsúcs-e.
+
+<br>
+
+---
+
+<br>
 
 ### 4) Közösségi hálózat
 
@@ -38,6 +56,12 @@ Képezze le a facebook / instagram ismerőseit közösségi hálóra, gráf seg�
 
 - Legyen lehetőség lekérdezni egy adott személy ismerőseit.
 - Legyen lehetőség "ismerősnek jelölést" készíteni, amelyhez az kell, hogy két személy között legyen legalább 2 db közös ismerős.
+
+<br>
+
+---
+
+<br>
 
 ### 5) Látványosságok
 
