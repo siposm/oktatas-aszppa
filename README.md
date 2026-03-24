@@ -1,8 +1,10 @@
-# Adatszerkezetek és Párhuzamos Programozás Alapjai
+## Adatszerkezetek és Párhuzamos Programozás Alapjai
 
-TTK: <https://nik.uni-obuda.hu/targyleirasok/tantargyak/adatszerkezetek-es-parhuzamos-programozas-alapjai/>
+### TTK
 
-## Heti menetrend
+<https://nik.uni-obuda.hu/targyleirasok/tantargyak/adatszerkezetek-es-parhuzamos-programozas-alapjai/>
+
+### Heti menetrend
 
 | Hét | Témakör |
 |---:|---|
@@ -21,7 +23,7 @@ TTK: <https://nik.uni-obuda.hu/targyleirasok/tantargyak/adatszerkezetek-es-parhu
 | 13 | Konzultáció |
 | 14 | Pótló zárthelyi dolgozat |
 
-## Parancsok
+### Parancsok
 
 ```bash
 # új projekt létrehozása a mappa neve alapján
